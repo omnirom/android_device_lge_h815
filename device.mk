@@ -35,5 +35,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
+# Radio
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.do_not_init_csvt=1 \
+    rild.libargs=-d /dev/smd0 \
+    ril.subscription.types=NV,RUIM \
+    ro.telephony.call_ring.multiple=0 \
+    ro.telephony.default_network=9 \
+    telephony.lteOnCdmaDevice=0 \
+    telephony.lteOnGsmDevice=1
+
 # common g4
-$(call inherit-product, device/lge/g4-common/g4.mk)
+$(call inherit-product, device/lge/g4-common/common.mk)

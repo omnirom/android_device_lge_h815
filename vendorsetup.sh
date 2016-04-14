@@ -1,1 +1,2 @@
-add_lunch_combo cm_h815-userdebug
+add_lunch_combo aosp_h815-userdebug
+add_lunch_combo omni_h815-userdebug
